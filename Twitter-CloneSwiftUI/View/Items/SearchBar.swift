@@ -29,22 +29,24 @@ struct SearchBar: View {
                 )
             if isEditing{
                 Button(action: {
-                    isEditing = false
                     text = ""
                     UIApplication.shared.endEditing()
+                    withAnimation {
+                        self.isEditing = false
+                    }
                 }, label: {
                     Text("Cancel")
+                        .foregroundColor(.gray)
                 })
                 .foregroundColor(.black)
-                .padding(.trailing,10)
                 .transition(.move(edge: .trailing))
-                .animation(.default)
             }
         }
-        .background(Color(.systemGray6))
         .cornerRadius(13)
         .onTapGesture {
-            isEditing = true
+            withAnimation {
+                isEditing = true
+            }
         }
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F79B01B292A0385009F57AE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B01A292A0385009F57AE /* AuthViewModel.swift */; };
+		0F79B01D292A038A009F57AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B01C292A038A009F57AE /* User.swift */; };
+		0F79B020292A0AF8009F57AE /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B01F292A0AF8009F57AE /* AuthServices.swift */; };
 		0FD74B67291D47950006684E /* Twitter_CloneSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD74B66291D47950006684E /* Twitter_CloneSwiftUIApp.swift */; };
 		0FD74B69291D47950006684E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD74B68291D47950006684E /* ContentView.swift */; };
 		0FD74B6B291D47950006684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD74B6A291D47950006684E /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F79B01A292A0385009F57AE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0F79B01C292A038A009F57AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F79B01F292A0AF8009F57AE /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		0FD74B63291D47950006684E /* Twitter-CloneSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-CloneSwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD74B66291D47950006684E /* Twitter_CloneSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter_CloneSwiftUIApp.swift; sourceTree = "<group>"; };
 		0FD74B68291D47950006684E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F79B016292A0368009F57AE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F79B021292A33CB009F57AE /* Authentication */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F79B019292A037B009F57AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F79B01C292A038A009F57AE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0F79B01E292A04A4009F57AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F79B01F292A0AF8009F57AE /* AuthServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0F79B021292A33CB009F57AE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0F79B01A292A0385009F57AE /* AuthViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		0FD74B5A291D47940006684E = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +143,10 @@
 		0FD74B65291D47950006684E /* Twitter-CloneSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0F79B01E292A04A4009F57AE /* Services */,
+				0F79B019292A037B009F57AE /* Model */,
+				0F79B016292A0368009F57AE /* ViewModel */,
 				0FD74B78291D47E10006684E /* Extensions */,
-				0FD74B77291D47DB0006684E /* Services */,
-				0FD74B79291D47EA0006684E /* Model */,
-				0FD74B75291D47CD0006684E /* ViewModel */,
 				0FD74B74291D47C30006684E /* View */,
 				0FD74B66291D47950006684E /* Twitter_CloneSwiftUIApp.swift */,
 				0FD74B68291D47950006684E /* ContentView.swift */,
@@ -142,33 +180,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0FD74B75291D47CD0006684E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0FD74B77291D47DB0006684E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		0FD74B78291D47E10006684E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				0FD74B99291D91B10006684E /* Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0FD74B79291D47EA0006684E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0FD74B7A291D48040006684E /* Profile */ = {
@@ -333,7 +350,9 @@
 				0FD74B92291D55800006684E /* TweetCellView.swift in Sources */,
 				0FD74BB8292005E20006684E /* LoginView.swift in Sources */,
 				0FD74BA2291D9D610006684E /* MainView.swift in Sources */,
+				0F79B020292A0AF8009F57AE /* AuthServices.swift in Sources */,
 				0FD74BAC291EA34A0006684E /* BlurView.swift in Sources */,
+				0F79B01D292A038A009F57AE /* User.swift in Sources */,
 				0FD74BA8291E226E0006684E /* MenuButton.swift in Sources */,
 				0FD74B9E291D95F40006684E /* MessageCell.swift in Sources */,
 				0FD74B94291D65230006684E /* SearchCell.swift in Sources */,
@@ -350,6 +369,7 @@
 				0FD74BB22920011B0006684E /* RegisterView.swift in Sources */,
 				0FD74BA6291E1F810006684E /* FollowView.swift in Sources */,
 				0FD74B8C291D49E20006684E /* MessagesView.swift in Sources */,
+				0F79B01B292A0385009F57AE /* AuthViewModel.swift in Sources */,
 				0FD74BAA291EA0250006684E /* UserProfile.swift in Sources */,
 				0FD74B90291D51790006684E /* MultilineTextField.swift in Sources */,
 				0FD74B67291D47950006684E /* Twitter_CloneSwiftUIApp.swift in Sources */,

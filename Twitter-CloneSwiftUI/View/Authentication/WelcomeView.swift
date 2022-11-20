@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State var width = UIScreen.main.bounds.width
+    
     var body: some View {
         NavigationView {
             VStack {

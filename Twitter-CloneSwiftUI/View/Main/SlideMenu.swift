@@ -145,8 +145,4 @@ struct SlideMenu: View {
     }
 }
 
-struct SlideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        SlideMenu()
-    }
-}
+
