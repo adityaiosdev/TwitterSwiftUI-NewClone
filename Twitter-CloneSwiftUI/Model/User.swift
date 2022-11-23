@@ -5,6 +5,7 @@
 //  Created by Aditya Ramadhan on 20/11/22.
 //
 
+import SwiftUI
 import Foundation
 
 struct ApiResponse: Decodable {
