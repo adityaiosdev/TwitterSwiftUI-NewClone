@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserProfile: View {
     
+    let user: User
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab = "Tweets"
@@ -40,7 +41,7 @@ struct UserProfile: View {
                                 .opacity(blurViewOpacity())
                             
                             VStack(spacing: 5, content: {
-                                Text("Cem")
+                                Text(self.user.username)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 Text("150 tweets")
@@ -90,11 +91,11 @@ struct UserProfile: View {
                     .padding(.bottom, -10)
                     
                     VStack (alignment: .leading, content: {
-                        Text("Cen")
+                        Text(self.user.username)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
-                        Text("@aditaja")
+                        Text("@\(self.user.username)")
                             .foregroundColor(.gray)
                         Text("Let's go around the world and go to fucking hell")
                             .foregroundColor(.black)
@@ -159,13 +160,7 @@ struct UserProfile: View {
                     .zIndex(1)
                     
                     VStack(spacing: 18, content: {
-                        TweetCellView(tweet: "Hey tim are those regular glasses?", tweetImage: "post")
-                        Divider()
                         
-                        ForEach(0..<20, id:\.self) {_ in
-                            TweetCellView(tweet: sampleText)
-                            Divider()
-                        }
                     })
                     .padding(.top)
                     .padding(.horizontal,10)
@@ -201,8 +196,3 @@ struct UserProfile: View {
     }
 }
 
-struct UserProfile_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfile()
-    }
-}

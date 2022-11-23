@@ -14,6 +14,13 @@ struct CreateTweetView: View {
     
     @ObservedObject var viewModel = CreateTweetViewModel()
     
+    @State var imagePickerPresented = false
+    @State var selectedImage: UIImage?
+    @State var postImage: Image?
+    @State var width = UIScreen.main.bounds.width
+    
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -28,7 +35,7 @@ struct CreateTweetView: View {
                 Button(action: {
                     if text != nil {
                         self.show.toggle()
-                        self.viewModel.uploadPost(text: text)
+                        self.viewModel.uploadPost(text: text, image: selectedImage)
                     }
                 }, label: {
                     Text("Tweet").padding()
@@ -39,8 +46,49 @@ struct CreateTweetView: View {
                 
             }
             MultilineTextField(text: $text)
+            
+            if postImage == nil {
+                Button(action: {
+                    self.imagePickerPresented.toggle()
+                }, label: {
+                    Image(systemName: "plus.circle")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 70, height: 70)
+                        .padding(.top)
+                        .foregroundColor(.black)
+                }).sheet(isPresented: $imagePickerPresented, onDismiss: {
+                    loadImage()
+                },content: {
+                    ImagePicker(image: $selectedImage)
+                })
+                
+            } else if let image = postImage {
+                VStack {
+                    HStack(alignment: .top, content: {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .padding(.horizontal)
+                            .frame(width: width*0.9)
+                            .cornerRadius(16)
+                            .clipped()
+                    })
+                    Spacer()
+                }
+            }
         }
+        
+       
         .padding()
+    }
+}
+
+
+extension CreateTweetView {
+    func loadImage(){
+        guard let selectedImage = selectedImage else {return}
+        postImage = Image(uiImage: selectedImage)
     }
 }
 

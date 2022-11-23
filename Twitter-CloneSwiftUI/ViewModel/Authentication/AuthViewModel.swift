@@ -22,16 +22,11 @@ class AuthViewModel: ObservableObject {
 
         if token != nil {
             isAuthenticated = true
-            print(token)
             if let userId = defaults.object(forKey: "userid"){
-                print(userId)
                 fetchUser(userId: userId as! String )
-                print("\(self.currentUser)")
             }
 
         }else{
-            print("Not authenticated")
-            print("this is token\(token)")
             isAuthenticated = false
         }
     }
@@ -51,8 +46,6 @@ class AuthViewModel: ObservableObject {
                     defaults.set(user.user.id, forKey: "userid")
                     self.isAuthenticated = true
                     self.currentUser = user.user
-                    print("\(self.currentUser)")
-                    print("\(user.token)")
                 }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -83,7 +76,6 @@ class AuthViewModel: ObservableObject {
                 print(user, "asdasd")
                 self.isAuthenticated = true
                 self.currentUser = user
-                print("\(self.currentUser)")
             }
             case .failure(let error):
                 print(error, "gabisa")

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     
-    let user: User?
+    let user: User
     
     @State var width = UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.2)
     @State var x = -UIScreen.main.bounds.width + (UIScreen.main.bounds.width * 0.2)
@@ -22,10 +22,10 @@ struct MainView: View {
                 ZStack(alignment: Alignment(horizontal: .leading, vertical: .center), content: {
                     VStack{
                         TopBar(x: $x)
-                        Home()
+                        Home(user: user)
                             .offset(x: x + width)
                     }
-                    SlideMenu()
+                    SlideMenu(viewModel: AuthViewModel.shared)
                         .shadow(color: Color.black.opacity(x != 0 ? 0.1 : 0), radius: 5, x: 5, y:0)
                         .offset(x: x)
                         .background(Color.black.opacity(x==0 ? 0.5 : 0))

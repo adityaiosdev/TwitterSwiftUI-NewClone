@@ -13,6 +13,11 @@
 		0F79B023292A4307009F57AE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B022292A4307009F57AE /* Tweet.swift */; };
 		0F79B026292A43EE009F57AE /* CreateTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B025292A43EE009F57AE /* CreateTweetViewModel.swift */; };
 		0F79B028292A44A9009F57AE /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B027292A44A9009F57AE /* RequestServices.swift */; };
+		0F79B05A292E4CFB009F57AE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B059292E4CFB009F57AE /* ImagePicker.swift */; };
+		0F79B05C292E54AF009F57AE /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B05B292E54AF009F57AE /* ImageUploader.swift */; };
+		0F79B05F292E68AD009F57AE /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B05E292E68AD009F57AE /* FeedViewModel.swift */; };
+		0F79B061292E6DDC009F57AE /* TweetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79B060292E6DDC009F57AE /* TweetCellViewModel.swift */; };
+		0F79B064292E706C009F57AE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0F79B063292E706C009F57AE /* Kingfisher */; };
 		0FD74B67291D47950006684E /* Twitter_CloneSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD74B66291D47950006684E /* Twitter_CloneSwiftUIApp.swift */; };
 		0FD74B69291D47950006684E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD74B68291D47950006684E /* ContentView.swift */; };
 		0FD74B6B291D47950006684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD74B6A291D47950006684E /* Assets.xcassets */; };
@@ -53,6 +58,10 @@
 		0F79B022292A4307009F57AE /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		0F79B025292A43EE009F57AE /* CreateTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetViewModel.swift; sourceTree = "<group>"; };
 		0F79B027292A44A9009F57AE /* RequestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
+		0F79B059292E4CFB009F57AE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0F79B05B292E54AF009F57AE /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		0F79B05E292E68AD009F57AE /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		0F79B060292E6DDC009F57AE /* TweetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellViewModel.swift; sourceTree = "<group>"; };
 		0FD74B63291D47950006684E /* Twitter-CloneSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-CloneSwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD74B66291D47950006684E /* Twitter_CloneSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter_CloneSwiftUIApp.swift; sourceTree = "<group>"; };
 		0FD74B68291D47950006684E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79B064292E706C009F57AE /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,7 @@
 		0F79B016292A0368009F57AE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0F79B05D292E68A5009F57AE /* Feed */,
 				0F79B024292A43A7009F57AE /* PostTweet */,
 				0F79B021292A33CB009F57AE /* Authentication */,
 			);
@@ -121,6 +132,7 @@
 			children = (
 				0F79B01F292A0AF8009F57AE /* AuthServices.swift */,
 				0F79B027292A44A9009F57AE /* RequestServices.swift */,
+				0F79B05B292E54AF009F57AE /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -139,6 +151,15 @@
 				0F79B025292A43EE009F57AE /* CreateTweetViewModel.swift */,
 			);
 			path = PostTweet;
+			sourceTree = "<group>";
+		};
+		0F79B05D292E68A5009F57AE /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0F79B05E292E68AD009F57AE /* FeedViewModel.swift */,
+				0F79B060292E6DDC009F57AE /* TweetCellViewModel.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		0FD74B5A291D47940006684E = {
@@ -200,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD74B99291D91B10006684E /* Extensions.swift */,
+				0F79B059292E4CFB009F57AE /* ImagePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +332,9 @@
 			dependencies = (
 			);
 			name = "Twitter-CloneSwiftUI";
+			packageProductDependencies = (
+				0F79B063292E706C009F57AE /* Kingfisher */,
+			);
 			productName = "Twitter-CloneSwiftUI";
 			productReference = 0FD74B63291D47950006684E /* Twitter-CloneSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -338,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 0FD74B5A291D47940006684E;
+			packageReferences = (
+				0F79B062292E706C009F57AE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 0FD74B64291D47950006684E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79B05F292E68AD009F57AE /* FeedViewModel.swift in Sources */,
 				0FD74B92291D55800006684E /* TweetCellView.swift in Sources */,
 				0FD74BB8292005E20006684E /* LoginView.swift in Sources */,
 				0FD74BA2291D9D610006684E /* MainView.swift in Sources */,
@@ -385,6 +414,7 @@
 				0FD74BB4292002400006684E /* CustomAuthTextField.swift in Sources */,
 				0FD74BB22920011B0006684E /* RegisterView.swift in Sources */,
 				0FD74BA6291E1F810006684E /* FollowView.swift in Sources */,
+				0F79B05A292E4CFB009F57AE /* ImagePicker.swift in Sources */,
 				0F79B023292A4307009F57AE /* Tweet.swift in Sources */,
 				0FD74B8C291D49E20006684E /* MessagesView.swift in Sources */,
 				0F79B028292A44A9009F57AE /* RequestServices.swift in Sources */,
@@ -397,6 +427,8 @@
 				0FD74B8A291D49DB0006684E /* NotificationsView.swift in Sources */,
 				0F79B026292A43EE009F57AE /* CreateTweetViewModel.swift in Sources */,
 				0FD74BAE291EAFA90006684E /* TabButton.swift in Sources */,
+				0F79B05C292E54AF009F57AE /* ImageUploader.swift in Sources */,
+				0F79B061292E6DDC009F57AE /* TweetCellViewModel.swift in Sources */,
 				0FD74B9C291D92F80006684E /* NotificationCell.swift in Sources */,
 				0FD74B9A291D91B10006684E /* Extensions.swift in Sources */,
 			);
@@ -599,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F79B062292E706C009F57AE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F79B063292E706C009F57AE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F79B062292E706C009F57AE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FD74B5B291D47940006684E /* Project object */;
 }

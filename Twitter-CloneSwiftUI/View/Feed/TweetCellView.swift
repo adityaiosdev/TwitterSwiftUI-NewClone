@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCellView: View {
     
-    var tweet: String
-    var tweetImage: String?
+    @ObservedObject var viewModel: TweetCellViewModel
+    
+    init(viewModel: TweetCellViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack{
@@ -23,25 +27,34 @@ struct TweetCellView: View {
                 
                 VStack(alignment: .leading, spacing: 10, content: {
                     (
-                    Text("Name ")
+                        Text("\(self.viewModel.tweet.username) ")
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     +
-                    Text("@Username")
+                    Text("@\(self.viewModel.tweet.username)")
                         .foregroundColor(.gray)
                     )
-                    Text(tweet)
+                    Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
-                    if let image = tweetImage {
-                        GeometryReader { proxy in
-                            Image(image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: proxy.frame(in: .global).width, height: 240, alignment: .center)
-                                .cornerRadius(15)
-                        }.frame(height: 250)
+//
+                    if let imageId = viewModel.tweet.id {
+                        if viewModel.tweet.image == "true"{
+                            GeometryReader { proxy in
+                                KFImage(URL(string: "http://localhost:3000/tweets/\(imageId)/image"))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: proxy.frame(in: .global).width, height: 250)
+                                    .cornerRadius(15)
+                            }.frame(height: 250)
+                        
+                            
+                            
+                            
+                                
+                        }
                     }
                 })
+                Spacer()
                 
             })
             
@@ -78,10 +91,6 @@ struct TweetCellView: View {
     }
 }
 
-struct TweetCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetCellView(tweet: sampleText)
-    }
-}
+
 
 var sampleText = "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
